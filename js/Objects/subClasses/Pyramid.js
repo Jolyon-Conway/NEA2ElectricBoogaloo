@@ -1,8 +1,11 @@
 class Pyramid extends ObjectParent {
     threeDPoints = [];
 
-    constructor(threeDPoints, passive) {
+    constructor(threeDPoints, passive, image, isImage, colour) {
         super(passive);
+        super(image);
+        super(isImage);
+        super(colour);
         this.threeDPoints = threeDPoints;
         this.twoDPoints = [];
     }

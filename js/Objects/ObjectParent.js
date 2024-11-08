@@ -1,6 +1,9 @@
 class ObjectParent {
-    constructor(passive) {
+    constructor(passive, image, isImage, colour) {
         this.passive = passive;
+        this.image = image;
+        this.isImage = isImage;
+        this.colour = colour;
     }
 
     // rotates the object about the origin

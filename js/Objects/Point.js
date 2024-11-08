@@ -9,12 +9,12 @@ class Point {
 
     // functions for translating the 3D point to 2D
     vectorizeX() {
-        this.w = this.x*(400/(600-this.z)) + 400;
+        this.w = this.x*(400/(600-this.z));
         return this.w;
     }
 
     vectorizeY() {
-        this.h = -this.y*(400/(600-this.z)) + 400;
+        this.h = -this.y*(400/(600-this.z));
         return this.h;
     }
 
