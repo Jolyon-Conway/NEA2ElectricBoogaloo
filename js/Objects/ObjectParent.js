@@ -7,50 +7,53 @@ class ObjectParent {
     }
 
     // rotates the object about the origin
-    rotateAboutO(threeDPoints, theta, axis) {
+    rotateAboutO(theta, axis) {
         switch (axis) {
             case 'x':
-                for (let i = 0; i < threeDPoints.length; i++) {
-                    threeDPoints[i].rotateAboutX(threeDPoints[i], theta);
+                for (let i = 0; i < this.threeDPoints.length; i++) {
+                    this.threeDPoints[i].rotateX(theta)
                 }
+                break
             case 'y':
-                for (let i = 0; i < threeDPoints.length; i++) {
-                    threeDPoints[i].rotateAboutY(threeDPoints[i], theta);
+                for (let i = 0; i < this.threeDPoints.length; i++) {
+                    this.threeDPoints[i].rotateY(theta);
                 }
+                break
             case 'z':
-                for (let i = 0; i < threeDPoints.length; i++) {
-                    threeDPoints[i].rotateAboutZ(threeDPoints[i], theta);
+                for (let i = 0; i < this.threeDPoints.length; i++) {
+                    this.threeDPoints[i].rotateZ(theta);
                 }
+                break
         }
     }
 
     //rotates the object about a point
-    rotateAboutPoint(threeDPoints, theta, axis, point) {
-        for (let i = 0; i < threeDPoints.length; i++) {
-            threeDpoints[i].x -= point.x;
-            threeDpoints[i].y -= point.y;
-            threeDpoints[i].z -= point.z;
+    rotateAboutPoint(theta, axis, point) {
+        for (let i = 0; i < this.threeDPoints.length; i++) {
+            this.threeDPoints[i].x -= point.x;
+            this.threeDPoints[i].y -= point.y;
+            this.threeDPoints[i].z -= point.z;
         }
-        this.rotateAboutO(threeDPoints, theta, axis);
-        for (let i = 0; i < threeDPoints.length; i++) {
-            threeDpoints[i].x += point.x;
-            threeDpoints[i].y += point.y;
-            threeDpoints[i].z += point.z;
+        this.rotateAboutO(theta, axis);
+        for (let i = 0; i < this.threeDPoints.length; i++) {
+            this.threeDPoints[i].x += point.x;
+            this.threeDPoints[i].y += point.y;
+            this.threeDPoints[i].z += point.z;
         }
     }
     // finds the centre of mass of the object
-    centreOfMass(threeDPoints) {
+    centreOfMass() {
         let x = 0;
         let y = 0;
         let z = 0;
-        for (let i = 0; i < threeDPoints.length; i++) {
-            x += threeDPoints[i].x;
-            y += threeDPoints[i].y;
-            z += threeDPoints[i].z;
+        for (let i = 0; i < this.threeDPoints.length; i++) {
+            x += this.threeDPoints[i].x;
+            y += this.threeDPoints[i].y;
+            z += this.threeDPoints[i].z;
         }
-        x /= threeDPoints.length;
-        y /= threeDPoints.length;
-        z /= threeDPoints.length;
+        x /= this.threeDPoints.length;
+        y /= this.threeDPoints.length;
+        z /= this.threeDPoints.length;
         return new Point(x, y, z);
     }
 }

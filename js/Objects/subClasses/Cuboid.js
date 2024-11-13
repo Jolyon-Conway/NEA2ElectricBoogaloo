@@ -34,30 +34,37 @@ class Cuboid extends ObjectParent {
 
     findFaces() {
         this.vectorizeAll()
-        let facesArr = [];
+        let facesArr = Array.from({ length: 6 }, () => new Array(4));
         // face 1
-        facesArr[0][0] = this.twoDPoints[0]
-        facesArr[0][1] = this.twoDPoints[1]
-        facesArr[0][2] = this.twoDPoints[2]
-        facesArr[0][3] = this.twoDPoints[3]
+        facesArr[0][0] = this.threeDPoints[0]
+        facesArr[0][1] = this.threeDPoints[1]
+        facesArr[0][2] = this.threeDPoints[2]
+        facesArr[0][3] = this.threeDPoints[3]
         // face 2
-        facesArr[1][0] = this.twoDPoints[1]
-        facesArr[1][1] = this.twoDPoints[5]
-        facesArr[1][2] = this.twoDPoints[6]
-        facesArr[1][3] =  this.twoDPoints[2]
+        facesArr[1][0] = this.threeDPoints[1]
+        facesArr[1][1] = this.threeDPoints[5]
+        facesArr[1][2] = this.threeDPoints[6]
+        facesArr[1][3] = this.threeDPoints[2]
         // face 3
-        facesArr[2][0] = this.twoDPoints[0]
-        facesArr[2][1] = this.twoDPoints[1]
-        facesArr[2][2] = this.twoDPoints[4]
-        facesArr[2][3] = this.twoDPoints[5]
+        facesArr[2][0] = this.threeDPoints[4]
+        facesArr[2][1] = this.threeDPoints[5]
+        facesArr[2][2] = this.threeDPoints[1]
+        facesArr[2][3] = this.threeDPoints[0]
         // face 4
-        facesArr[3][0] = this.twoDPoints[0]
-        facesArr[3][1] = this.twoDPoints[5], this.twoDPoints[7], this.twoDPoints[3]
+        facesArr[3][0] = this.threeDPoints[4]
+        facesArr[3][1] = this.threeDPoints[0]
+        facesArr[3][2] = this.threeDPoints[3]
+        facesArr[3][3] = this.threeDPoints[7]
         // face 5
-        facesArr[4] = [this.twoDPoints[4], this.twoDPoints[5], this.twoDPoints[6], this.twoDPoints[7]];
+        facesArr[4][0] = this.threeDPoints[7]
+        facesArr[4][1] = this.threeDPoints[6]
+        facesArr[4][2] = this.threeDPoints[5]
+        facesArr[4][3] = this.threeDPoints[4]
         // face 6
-        facesArr[5] = [this.twoDPoints[3], this.twoDPoints[8], this.twoDPoints[6], this.twoDPoints[2]];
-        console.log(facesArr)
+        facesArr[5][0] = this.threeDPoints[3]
+        facesArr[5][1] = this.threeDPoints[2]
+        facesArr[5][2] = this.threeDPoints[6]
+        facesArr[5][3] = this.threeDPoints[7]
         // return array
         return facesArr;
     }

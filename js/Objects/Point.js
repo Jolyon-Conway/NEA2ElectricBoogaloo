@@ -43,7 +43,7 @@ class Point {
         this.y = tempY;
     }
 
-    // procedures for trnaslatign points
+    // procedures for translating points
     translate(dx, dy, dz) {
         this.x += dx;
         this.y += dy;
