@@ -27,8 +27,6 @@ function setup() {
 function draw() {
     background(0);
     stroke(255);
-    shapes[0].rotateAboutO(0.5, 'x');
-    shapes[0].rotateAboutO(-0.5, 'y');
     faces = []
     for (let i = 0; i < shapes.length; i++) {
         shapes[i].vectorizeAll();
