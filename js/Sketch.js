@@ -23,6 +23,7 @@ function setup() {
     threeDPoints[7] = new Point(-100, -100, -100);
     shapes[0] = new Cuboid(threeDPoints, false, textures[3], true, "red");
     
+    
 }
 function draw() {
     background(0);

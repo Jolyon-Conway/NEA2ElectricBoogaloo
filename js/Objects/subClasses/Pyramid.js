@@ -27,4 +27,26 @@ class Pyramid extends ObjectParent {
         // draw line from 3 to 4
         line(this.twoDPoints[2][0], this.twoDPoints[2][1], this.twoDPoints[3][0], this.twoDPoints[3][1]);
     }
+
+    findFaces() {
+        this.vectorizeAll()
+        let facesArr = Array.from({ length: 4 }, () => new Array(3));
+        // face 1
+        facesArr[0][0] = this.threeDPoints[0]
+        facesArr[0][1] = this.threeDPoints[1]
+        facesArr[0][2] = this.threeDPoints[2]
+        // face 2
+        facesArr[1][0] = this.threeDPoints[0]
+        facesArr[1][1] = this.threeDPoints[1]
+        facesArr[1][2] = this.threeDPoints[3]
+        // face 3
+        facesArr[2][0] = this.threeDPoints[0]
+        facesArr[2][1] = this.threeDPoints[2]
+        facesArr[2][2] = this.threeDPoints[3]
+        // face 4
+        facesArr[3][0] = this.threeDPoints[1]
+        facesArr[3][1] = this.threeDPoints[2]
+        facesArr[3][2] = this.threeDPoints[3]
+        return facesArr;
+    }
 }
