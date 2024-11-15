@@ -19,6 +19,7 @@ class Face {
             // Draw the face.
             // Use the image's width and height as uv coordinates.
             tint(255,255)
+            strokeWeight(0) // removes z-fighting
             stroke(0,0,0,0)
             beginShape();
             vertex(this.twoDPoints[0][0], this.twoDPoints[0][1], 0, 0, 0);
