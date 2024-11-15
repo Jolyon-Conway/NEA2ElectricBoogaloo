@@ -49,4 +49,12 @@ class Point {
         this.y += dy;
         this.z += dz;
     }
+
+    findDistanceFromCamera() {
+        let xDist = this.x - 0;
+        let yDist = this.y - 0;
+        let zDist = this.z - 600;
+        let Dist = Math.sqrt(Math.pow(xDist, 2) + Math.pow(yDist, 2) + Math.pow(zDist, 2));
+        return Dist;
+    }
 }

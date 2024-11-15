@@ -49,4 +49,12 @@ class Face {
         }
         return new Point(sumX / 4, sumY / 4, sumZ / 4);
     }
+
+    findMeanDist() {
+        let sum = 0;
+        for (let i = 0; i < this.threeDPoints.length; i++) {
+            sum += this.threeDPoints[i].findDistanceFromCamera();
+        }
+        return sum / 4;
+    }
 }
