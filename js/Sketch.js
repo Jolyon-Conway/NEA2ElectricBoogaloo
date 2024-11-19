@@ -36,7 +36,7 @@ function draw() {
     stroke(255);
     faces = []
     for (let i = 0; i < shapes.length; i++) {
-        shapes[i].rotateAboutO(1, 'x')
+        shapes[i].rotateAboutO(1, 'y')
     }
 
     for (let i = 0; i < shapes.length; i++) {
