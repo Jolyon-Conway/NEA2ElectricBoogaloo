@@ -38,7 +38,7 @@ function draw() {
     for (let i = 0; i < shapes.length; i++) {
         shapes[i].rotateAboutO(1, 'y')
     }
-
+    //creates faces for all shapes
     for (let i = 0; i < shapes.length; i++) {
         shapes[i].vectorizeAll();
         let newFaces = shapes[i].findFaces();
@@ -56,6 +56,7 @@ function draw() {
             }           
         }
     }
+    //draws all faces
     for (let i = 0; i < faces.length; i++) {
         faces[i].drawFace();
     }
