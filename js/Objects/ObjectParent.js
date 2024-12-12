@@ -1,3 +1,7 @@
+/*
+ * this is the parent class for all shapes in the simulation
+ */
+
 class ObjectParent {
     constructor(passive, image, isImage, colour) {
         this.passive = passive;

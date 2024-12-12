@@ -1,3 +1,8 @@
+/*
+ * this is the class for the Pyramid object, containing the 3D points of the pyramid, and the
+ * 2D points of the pyramid, and the methods to translate between them.
+ */
+
 class Pyramid extends ObjectParent {
     threeDPoints = [];
 

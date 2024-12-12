@@ -1,3 +1,13 @@
+/*
+this is the class which represents a face of a 3D object. 
+It contains the 3D points which make up the face, the 2D points 
+which are used to draw the face on the canvas, a boolean which determines 
+whether the face is an image or a square, the image which is used as 
+a texture if the face is an image, the colour of the face if it is 
+a square, and the centre of the face. The class contains a method 
+to draw the face on the canvas, a method to find the centre of the face, 
+and a method to find the mean distance of the face from the camera.
+*/
 class Face {
     constructor(threeDPoints, isImage, image, colour) {
         this.threeDPoints = threeDPoints;

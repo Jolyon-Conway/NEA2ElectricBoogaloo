@@ -1,3 +1,8 @@
+/*
+ * this is the class for the cuboid object, containing the 3D points of the cuboid, and the
+ * 2D points of the cuboid, and the methods to translate between them.
+ */
+
 class Cuboid extends ObjectParent {
     threeDPoints = [];
 

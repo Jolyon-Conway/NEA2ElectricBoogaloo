@@ -1,3 +1,9 @@
+/*
+ * This is the class for the point object. It contains the 3D coordinates of the point, as well as
+ * the 2D coordinates of the point. It also contains procedures for translating the 3D point to 2D,
+ * rotating the point, and translating the point.
+ */
+
 class Point {
     constructor(x, y, z) {
         this.x = x;
