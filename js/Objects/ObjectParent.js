@@ -60,4 +60,11 @@ class ObjectParent {
         z /= this.threeDPoints.length;
         return new Point(x, y, z);
     }
+
+    translate(dx, dy, dz) {
+        for (let i = 0; i < this.threeDPoints.length; i++) {
+            this.threeDPoints[i].translate(dx,dy,dz);
+
+        }
+    }
 }

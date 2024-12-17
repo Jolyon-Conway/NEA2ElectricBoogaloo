@@ -3,7 +3,7 @@
  */
 
 let textures = [];
-let numTextures = 4; // number of textures in the textures folder MUST be updated manually everytime a texture is added or removed
+let numTextures = 4; // number of textures in the textures folder MUST be updated manually every time a texture is added or removed
 let faces = []
 let shapes = []
 let threeDPoints1 = []
@@ -20,45 +20,43 @@ function preload() {
 
 function setup() {
     createCanvas(800, 800, WEBGL);
-    threeDPoints1[0] = new Point(-300, 100, 100);
-    threeDPoints1[1] = new Point(-100, 100, 100);
-    threeDPoints1[2] = new Point(-100, -100, 100);
-    threeDPoints1[3] = new Point(-300, -100, 100);
-    threeDPoints1[4] = new Point(-300, 100, -100);
-    threeDPoints1[5] = new Point(-100, 100, -100);
-    threeDPoints1[6] = new Point(-100, -100, -100);
-    threeDPoints1[7] = new Point(-300, -100, -100);
+    threeDPoints1[0] = new Point(-100, 100, 100);
+    threeDPoints1[1] = new Point(100, 100, 100);
+    threeDPoints1[2] = new Point(100, -100, 100);
+    threeDPoints1[3] = new Point(-100, -100, 100);
+    threeDPoints1[4] = new Point(-100, 100, -100);
+    threeDPoints1[5] = new Point(100, 100, -100);
+    threeDPoints1[6] = new Point(100, -100, -100);
+    threeDPoints1[7] = new Point(-100, -100, -100);
     shapes[0] = new Cuboid(threeDPoints1, false, textures[0], true, "red");
-    
+    /*
     threeDPoints2[0] = new Point(200, 100, 0)
     threeDPoints2[1] = new Point(100, -100, -100)
     threeDPoints2[2] = new Point(300, -100, -100)
     threeDPoints2[3] = new Point(200, -100, 100)
     shapes[1] = new Pyramid(threeDPoints2, false, textures[2], true, "yellow")
-    
+    */
    
 }
 function draw() {
     background(0);
     stroke(255);
     faces = []
-    for (let i = 0; i < shapes.length; i++) {
-        shapes[i].rotateAboutPoint(1, 'y', shapes[i].centreOfMass())
-    }
+    shapes[0].translate(0,0,-10)
+    //shapes[1].translate(-1,0,0)
     //creates faces for all shapes
     for (let i = 0; i < shapes.length; i++) {
         shapes[i].vectorizeAll();
         let newFaces = shapes[i].findFaces();
         for (let j = 0; j < newFaces.length; j++) {
             for (let k = 0; k < newFaces[j].length; k++) {
-                for (let p = 0; p < newFaces[j].threeDPoints.length; p++) {
-                    if (newFaces[j].threeDPoints[p].z <= 600) {
-                        faces.push(new Face(newFaces[j], shapes[i].isImage, shapes[i].image, shapes[i].colour));
-                    }
+                if (newFaces[j][k].z < 500) {
+                    faces.push(new Face(newFaces[j], shapes[i].isImage, shapes[i].image, shapes[i].colour));
                 }
             }
         }
     }
+
     for (let i = 0; i < faces.length; i++) {
         //sort faces based on the average z value of the face's points
         for (let j = 0; j < faces.length - 1; j++) {
