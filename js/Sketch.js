@@ -20,30 +20,32 @@ function preload() {
 
 function setup() {
     createCanvas(800, 800, WEBGL);
-    threeDPoints1[0] = new Point(-100, 100, 100);
-    threeDPoints1[1] = new Point(100, 100, 100);
-    threeDPoints1[2] = new Point(100, -100, 100);
-    threeDPoints1[3] = new Point(-100, -100, 100);
-    threeDPoints1[4] = new Point(-100, 100, -100);
-    threeDPoints1[5] = new Point(100, 100, -100);
-    threeDPoints1[6] = new Point(100, -100, -100);
-    threeDPoints1[7] = new Point(-100, -100, -100);
+    threeDPoints1[0] = new Point(-300, 100, 100);
+    threeDPoints1[1] = new Point(-100, 100, 100);
+    threeDPoints1[2] = new Point(-100, -100, 100);
+    threeDPoints1[3] = new Point(-300, -100, 100);
+    threeDPoints1[4] = new Point(-300, 100, -100);
+    threeDPoints1[5] = new Point(-100, 100, -100);
+    threeDPoints1[6] = new Point(-100, -100, -100);
+    threeDPoints1[7] = new Point(-300, -100, -100);
     shapes[0] = new Cuboid(threeDPoints1, false, textures[0], true, "red");
-    /*
+    
     threeDPoints2[0] = new Point(200, 100, 0)
     threeDPoints2[1] = new Point(100, -100, -100)
     threeDPoints2[2] = new Point(300, -100, -100)
     threeDPoints2[3] = new Point(200, -100, 100)
     shapes[1] = new Pyramid(threeDPoints2, false, textures[2], true, "yellow")
-    */
+    
    
 }
 function draw() {
     background(0);
     stroke(255);
     faces = []
-    shapes[0].translate(0,0,-10)
-    //shapes[1].translate(-1,0,0)
+    for (let i = 0; i < shapes.length; i++) {
+        shapes[i].rotateAboutO(1, 'y')
+    }
+    
     //creates faces for all shapes
     for (let i = 0; i < shapes.length; i++) {
         shapes[i].vectorizeAll();
